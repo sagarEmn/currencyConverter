@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { InputBox, Scatter } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
-
 function App() {
+  // state variables for user input and conversion
   const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("npr");
   const [convertedAmount, setConvertedAmount] = useState(0);
 
+  // fetch currency data and generate options
   const currencyInfo = useCurrencyRates(from);
   const options = Object.keys(currencyInfo);
-
+  
+  // functions for currency conversion & swap actions
   const swap = () => {
     setFrom(to);
     setTo(from);
@@ -82,7 +84,7 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-whiet px-4 py-3 rounded-lg"
+                className="w-full bg-blue-600 text-whiet px-4 py-3 rounded-full text-lg"
               >
                 Convert {from.toUpperCase()} to {to.toUpperCase()}
               </button>
