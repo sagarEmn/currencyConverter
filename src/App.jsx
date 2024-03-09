@@ -30,12 +30,16 @@ function App() {
   const [fontSize, setFontSize] = useState('');
 
   useEffect(() => {
-    if (width <= 500) { // Adjust breakpoints as needed
+    if ( width <= 350) {
       setFontSize('text-sm');
-    } else if (width >= 768) {
-      setFontSize('text-lg');
-    } else {
-      setFontSize('text-sm');
+    }
+    else if (width <= 550) { // Adjust breakpoints as needed
+      setFontSize('text-xl');
+    } else if (width <= 800) {
+      setFontSize('text-2xl');
+    } 
+    else {
+      setFontSize('text-2xl');
     }
   }, [width]);
 
@@ -48,7 +52,7 @@ function App() {
           backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
         }}
       >
-        <div className="m-2">
+        <div className="w-full m-2">
           <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30">
             <form
               onSubmit={(e) => {
