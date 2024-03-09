@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { InputBox, Scatter } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
+
 function App() {
   // state variables for user input and conversion
   const [amount, setAmount] = useState(0);
