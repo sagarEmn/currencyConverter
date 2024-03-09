@@ -1,16 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
-
 function App() {
+  // state variables for user input and conversion
   const [amount, setAmount] = useState(0);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("npr");
   const [convertedAmount, setConvertedAmount] = useState(0);
 
+  // fetch currency data and generate options
   const currencyInfo = useCurrencyRates(from);
   const options = Object.keys(currencyInfo);
-
+  
+  // functions for currency conversion & swap actions
   const swap = () => {
     setFrom(to);
     setTo(from);
