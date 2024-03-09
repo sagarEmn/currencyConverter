@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { InputBox } from "./components";
+import { InputBox, Scatter } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
 
 function App() {
@@ -18,7 +18,18 @@ function App() {
     setAmount(convertedAmount);
   };
 
+  const [convertedAmountData, setConvertedAmountData] = useState([]);
+
   const convert = () => {
+    const category = calculateCategory(amount * currencyInfo[to]);
+    setConvertedAmountData((prevData) => [
+      ...prevData,
+      {
+        category,
+        amount: amount * currencyInfo[to],
+        id: Date.now(),
+      },
+    ]);
     setConvertedAmount(amount * currencyInfo[to]);
   };
 
@@ -78,6 +89,9 @@ function App() {
             </form>
           </div>
         </div>
+
+        <Scatter />
+
       </div>
     </>
   );
