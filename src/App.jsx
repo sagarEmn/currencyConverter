@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
-import { ScatterChart, XAxis, YAxis, Tooltip } from "recharts";
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -19,25 +18,14 @@ function App() {
     setAmount(convertedAmount);
   };
 
-  const [convertedAmountData, setConvertedAmountData] = useState([]);
-
   const convert = () => {
-    const category = calculateCategory(amount * currencyInfo[to]);
-    setConvertedAmountData((prevData) => [
-      ...prevData,
-      {
-        category,
-        amount: amount * currencyInfo[to],
-        id: Date.now(),
-      },
-    ]);
     setConvertedAmount(amount * currencyInfo[to]);
   };
 
   return (
     <>
       <div
-        className="w-full h-screen flex flex-wrap flex-col justify-center items-center bg-cover bg-no-repeat"
+        className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
         }}
@@ -89,16 +77,6 @@ function App() {
               </button>
             </form>
           </div>
-        </div>
-
-        {/* SCATTER CHART */}
-        <div className="chart-container">
-          <ScatterChart width={400} height={300} data={convertedAmountData}>
-            <XAxis dataKey="category" /> // X-axis represents categories
-            <YAxis /> // Numerical Y-axis for amounts
-            <Tooltip /> // Tooltip to display individual amounts on hover
-            {/* Apply jitter and color-coding here within the ScatterChart component */}
-          </ScatterChart>
         </div>
       </div>
     </>
