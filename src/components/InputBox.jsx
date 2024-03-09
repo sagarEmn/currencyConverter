@@ -13,7 +13,7 @@ function InputBox({
 }) {
   const labelId = useId();
   return (
-    <div className={`bg-white p-3 rounded-lg text-xl flex mb-2 ${className}`}>
+    <div className={`bg-white p-3 rounded-lg flex mb-2 ${className}`}>
       <div className="w-1/2">
         {/* LABEL */}
         <label htmlFor={labelId} className="text-black/40 mb-2 inline-block">
