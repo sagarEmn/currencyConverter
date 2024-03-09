@@ -33,7 +33,7 @@ function App() {
     if ( width <= 350) {
       setFontSize('text-sm');
     }
-    else if (width <= 550) { // Adjust breakpoints as needed
+    else if (width <= 550) {
       setFontSize('text-xl');
     } else if (width <= 800) {
       setFontSize('text-2xl');
