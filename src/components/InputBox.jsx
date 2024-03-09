@@ -1,5 +1,4 @@
 import React, { useId } from "react";
-import useCurrencyRates from "../hooks/useCurrencyRates";
 
 function InputBox({
   label,
@@ -20,6 +19,7 @@ function InputBox({
         <label htmlFor={labelId} className="text-black/40 mb-2 inline-block">
           {label}
         </label>
+
         {/* INPUT ELEMENT */}
         <input
           id={labelId}
@@ -33,9 +33,10 @@ function InputBox({
           }}
         />
       </div>
+
+      {/* SELECT BUTTON */}
       <div className="w-1/2 flex flex-wrap justify-end text-right">
         <p className="text-black/40 mb-2 w-full">Currency Type</p>
-        {/* SELECT BUTTON */}
         <select
           className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none"
           value={selectCurrency}
