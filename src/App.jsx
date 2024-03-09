@@ -73,7 +73,7 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-whiet px-4 py-3 rounded-lg"
+                className="w-full bg-blue-600 text-whiet px-4 py-3 rounded-full text-lg"
               >
                 Convert {from.toUpperCase()} to {to.toUpperCase()}
               </button>
