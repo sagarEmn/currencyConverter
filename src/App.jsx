@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useWindowSize } from 'react-use';
+import { useWindowSize } from "react-use";
 import { InputBox } from "./components";
 import useCurrencyRates from "./hooks/useCurrencyRates";
 
@@ -21,36 +21,29 @@ function App() {
     setConvertedAmount(amount);
     setAmount(convertedAmount);
   };
-  
+
   const convert = () => {
     setConvertedAmount(amount * currencyInfo[to]);
   };
 
   const { width } = useWindowSize();
-  const [fontSize, setFontSize] = useState('');
-  const [containerClass, setContainerClass] = useState('');
-  const [maxWidth, setMaxWidth] = useState('max-w-md');
+  const [fontSize, setFontSize] = useState("");
+  const [containerClass, setContainerClass] = useState("");
+  const [maxWidth, setMaxWidth] = useState("mx-w-4xl px-0.5");
 
   useEffect(() => {
-    if ( width <= 350) {
-      setFontSize('text-sm');
-    }
-    else if (width <= 550) {
-      setFontSize('text-xl');
-      setContainerClass('mx-auto px-0.5')
+    if (width <= 350) {
+      setFontSize("text-sm");
+    } else if (width <= 550) {
+      setFontSize("text-xl");
+      setContainerClass("mx-auto px-0.5");
     } else if (width <= 800) {
-      setFontSize('text-2xl');
-    } 
-    else if (width >= 800) {
-      setFontSize('text-3xl')
-      setMaxWidth('w-3/4');
-    }
-    else {
-      setFontSize('text-3xl')
-      setMaxWidth('mx-w-4xl')
+      setFontSize("text-2xl");
+    } else {
+      setFontSize("text-3xl");
+      setMaxWidth("max-w-4xl px-0.5");
     }
   }, [width]);
-
 
   return (
     <>
@@ -61,7 +54,9 @@ function App() {
         // }}
       >
         <div className="w-full m-2">
-          <div className={`neumorphism w-full ${maxWidth} mx-auto  rounded-lg p-2 pt-5 pb-5`}>
+          <div
+            className={`neumorphism w-full ${maxWidth} mx-auto  rounded-lg px-2 pt-5 pb-5`}
+          >
             <form
               onSubmit={(e) => {
                 e.preventDefault();

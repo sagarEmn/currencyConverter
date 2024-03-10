@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 .neumorphism {
-    border-radius: 30px;
-background: #8954b6;
-box-shadow:  35px 35px 76px #52326d,
-             -35px -35px 76px #c076ff;
+  border-radius: 24px;
+  background: #8954b6;
+  box-shadow: 35px 35px 76px #52326d, -35px -35px 76px #c076ff;
 }
 
-.fromDivColor {
-    background: #550da796;
+.formDivColor {
+  background: #38096e96;
 }
 
 .labelColor {
-    color: rgba(255, 255, 255, 0.788);
+  color: rgba(255, 255, 255, 0.788);
 }
 
 .backgroundColor {
@@ -22,11 +21,11 @@ box-shadow:  35px 35px 76px #52326d,
 }
 
 .inputColor {
-    color: white;
+  color: white;
 }
 
 .selectColor {
-    background: rgb(46, 6, 121);
-    color: rgb(180, 180, 180);
-    font-weight: bold;
+  background: rgb(46, 6, 121);
+  color: rgb(180, 180, 180);
+  font-weight: bold;
 }
