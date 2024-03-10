@@ -36,7 +36,7 @@ function InputBox({
 
       {/* SELECT BUTTON */}
       <div className="w-1/2 flex flex-wrap justify-end text-right">
-        <p className="text-black/40 mb-2 w-full">Currency Type</p>
+        <p className="text-white/80 mb-2 w-full">Currency Type</p>
         <select
           className="rounded-lg px-1 py-1 selectColor cursor-pointer outline-none"
           value={selectCurrency}
