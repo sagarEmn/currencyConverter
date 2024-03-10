@@ -28,6 +28,8 @@ function App() {
 
   const { width } = useWindowSize();
   const [fontSize, setFontSize] = useState('');
+  const [containerClass, setContainerClass] = useState('');
+  const [maxWidth, setMaxWidth] = useState('max-w-md');
 
   useEffect(() => {
     if ( width <= 350) {
@@ -35,11 +37,17 @@ function App() {
     }
     else if (width <= 550) {
       setFontSize('text-xl');
+      setContainerClass('mx-auto px-0.5')
     } else if (width <= 800) {
       setFontSize('text-2xl');
     } 
+    else if (width >= 800) {
+      setFontSize('text-3xl')
+      setMaxWidth('w-3/4');
+    }
     else {
-      setFontSize('text-2xl');
+      setFontSize('text-3xl')
+      setMaxWidth('mx-w-4xl')
     }
   }, [width]);
 
@@ -47,13 +55,13 @@ function App() {
   return (
     <>
       <div
-        className={`w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat ${fontSize}`}
-        style={{
-          backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
-        }}
+        className={`w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat ${fontSize} ${containerClass} bg-blue-400`}
+        // style={{
+        //   backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
+        // }}
       >
         <div className="w-full m-2">
-          <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30">
+          <div className={`w-full ${maxWidth} mx-auto border border-gray-60 rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30`}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
