@@ -61,7 +61,7 @@ function App() {
         // }}
       >
         <div className="w-full m-2">
-          <div className={`w-full ${maxWidth} mx-auto border border-gray-60 rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30`}>
+          <div className={`w-full ${maxWidth} mx-auto  rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30 border border-gray-60`}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
