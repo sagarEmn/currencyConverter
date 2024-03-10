@@ -5,10 +5,10 @@ import useCurrencyRates from "./hooks/useCurrencyRates";
 
 function App() {
   // state variables for user input and conversion
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("npr");
-  const [convertedAmount, setConvertedAmount] = useState(0);
+  const [convertedAmount, setConvertedAmount] = useState("");
 
   // fetch currency data and generate options
   const currencyInfo = useCurrencyRates(from);
