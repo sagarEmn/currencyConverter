@@ -9,6 +9,24 @@ box-shadow:  35px 35px 76px #52326d,
              -35px -35px 76px #c076ff;
 }
 
+.fromDivColor {
+    background: #550da796;
+}
+
+.labelColor {
+    color: rgba(255, 255, 255, 0.788);
+}
+
 .backgroundColor {
   background: #8248b1;
+}
+
+.inputColor {
+    color: white;
+}
+
+.selectColor {
+    background: rgb(46, 6, 121);
+    color: rgb(180, 180, 180);
+    font-weight: bold;
 }
