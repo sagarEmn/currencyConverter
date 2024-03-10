@@ -55,13 +55,13 @@ function App() {
   return (
     <>
       <div
-        className={`w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat ${fontSize} ${containerClass} bg-blue-400`}
+        className={`w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat ${fontSize} ${containerClass} backgroundColor`}
         // style={{
         //   backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)`,
         // }}
       >
         <div className="w-full m-2">
-          <div className={`w-full ${maxWidth} mx-auto  rounded-lg p-2 pt-5 pb-5 backdrop-blur-sm bg-white/30 border border-gray-60`}>
+          <div className={`neumorphism w-full ${maxWidth} mx-auto  rounded-lg p-2 pt-5 pb-5`}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();

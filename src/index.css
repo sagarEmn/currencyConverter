@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.neumorphism {
+    border-radius: 30px;
+background: #8954b6;
+box-shadow:  35px 35px 76px #52326d,
+             -35px -35px 76px #c076ff;
+}
+
+.backgroundColor {
+  background: #8248b1;
+}
